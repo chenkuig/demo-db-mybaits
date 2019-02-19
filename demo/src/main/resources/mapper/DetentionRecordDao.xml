@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.DetentionRecordDao">
+ <resultMap id="BaseResultMap" type="com.example.dmo.DetentionRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="express_number" jdbcType="VARCHAR" property="expressNumber" />
+    <result column="report_user_code" jdbcType="VARCHAR" property="reportUserCode" />
+    <result column="report_user_name" jdbcType="VARCHAR" property="reportUserName" />
+    <result column="report_org_code" jdbcType="VARCHAR" property="reportOrgCode" />
+    <result column="report_org_name" jdbcType="VARCHAR" property="reportOrgName" />
+    <result column="report_city_code" jdbcType="VARCHAR" property="reportCityCode" />
+    <result column="report_city_name" jdbcType="VARCHAR" property="reportCityName" />
+    <result column="report_province_code" jdbcType="VARCHAR" property="reportProvinceCode" />
+    <result column="report_province_name" jdbcType="VARCHAR" property="reportProvinceName" />
+    <result column="report_county_code" jdbcType="VARCHAR" property="reportCountyCode" />
+    <result column="report_county_name" jdbcType="VARCHAR" property="reportCountyName" />
+    <result column="report_time" jdbcType="TIMESTAMP" property="reportTime" />
+    <result column="detention_reason_code" jdbcType="VARCHAR" property="detentionReasonCode" />
+    <result column="detention_reason" jdbcType="VARCHAR" property="detentionReason" />
+    <result column="detention_reason_remarks" jdbcType="VARCHAR" property="detentionReasonRemarks" />
+    <result column="express_face_weight" jdbcType="DOUBLE" property="expressFaceWeight" />
+    <result column="express_again_weight" jdbcType="DOUBLE" property="expressAgainWeight" />
+    <result column="express_face_freight" jdbcType="DOUBLE" property="expressFaceFreight" />
+    <result column="express_length" jdbcType="DOUBLE" property="expressLength" />
+    <result column="express_width" jdbcType="DOUBLE" property="expressWidth" />
+    <result column="express_height" jdbcType="DOUBLE" property="expressHeight" />
+    <result column="express_volume_weight" jdbcType="DOUBLE" property="expressVolumeWeight" />
+    <result column="response_type" jdbcType="INTEGER" property="responseType" />
+    <result column="detention_status" jdbcType="INTEGER" property="detentionStatus" />
+    <result column="receive_user_code" jdbcType="VARCHAR" property="receiveUserCode" />
+    <result column="receive_user_name" jdbcType="VARCHAR" property="receiveUserName" />
+    <result column="dispatch_user_code" jdbcType="VARCHAR" property="dispatchUserCode" />
+    <result column="dispatch_user_name" jdbcType="VARCHAR" property="dispatchUserName" />
+    <result column="courier_type" jdbcType="VARCHAR" property="courierType" />
+    <result column="courier_status" jdbcType="INTEGER" property="courierStatus" />
+    <result column="send_user_name" jdbcType="VARCHAR" property="sendUserName" />
+    <result column="send_user_phone" jdbcType="VARCHAR" property="sendUserPhone" />
+    <result column="addressee_name" jdbcType="VARCHAR" property="addresseeName" />
+    <result column="addressee_phone" jdbcType="VARCHAR" property="addresseePhone" />
+    <result column="receive_org_code" jdbcType="VARCHAR" property="receiveOrgCode" />
+    <result column="receive_org_name" jdbcType="VARCHAR" property="receiveOrgName" />
+    <result column="deal_user_code" jdbcType="VARCHAR" property="dealUserCode" />
+    <result column="deal_user_name" jdbcType="VARCHAR" property="dealUserName" />
+    <result column="deal_time" jdbcType="TIMESTAMP" property="dealTime" />
+    <result column="last_deal_user_code" jdbcType="VARCHAR" property="lastDealUserCode" />
+    <result column="last_deal_user_name" jdbcType="VARCHAR" property="lastDealUserName" />
+    <result column="last_deal_time" jdbcType="TIMESTAMP" property="lastDealTime" />
+    <result column="data_source" jdbcType="VARCHAR" property="dataSource" />
+    <result column="file_path1" jdbcType="VARCHAR" property="filePath1" />
+    <result column="file_path2" jdbcType="VARCHAR" property="filePath2" />
+    <result column="file_path3" jdbcType="VARCHAR" property="filePath3" />
+    <result column="file_path4" jdbcType="VARCHAR" property="filePath4" />
+    <result column="file_path5" jdbcType="VARCHAR" property="filePath5" />
+    <result column="file_path6" jdbcType="VARCHAR" property="filePath6" />
+    <result column="file_path7" jdbcType="VARCHAR" property="filePath7" />
+    <result column="file_path8" jdbcType="VARCHAR" property="filePath8" />
+    <result column="file_path9" jdbcType="VARCHAR" property="filePath9" />
+    <result column="file_path10" jdbcType="VARCHAR" property="filePath10" />
+    <result column="timeout_status" jdbcType="VARCHAR" property="outTimeText" />
+    <result column="temp_path" jdbcType="VARCHAR" property="tempPath" />
+    <result column="detentionTime" jdbcType="VARCHAR" property="detentionTime" />
+	<result column="express_time" jdbcType="VARCHAR" property="expressTime" />
+    <result column="first_deal_finished_time" jdbcType="TIMESTAMP" property="firstDealFinishedTime" />
+  </resultMap>
+  <select id="countTotalNum" resultType="long">
+    select count(*) from t_detention_record
+  </select>
+  <select id="searchPage" resultMap="BaseResultMap">
+     select * from t_detention_record order by id
+  </select>
+</mapper>
